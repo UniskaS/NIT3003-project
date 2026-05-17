@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PawPal — Applications</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&family=DM+Mono&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/global.css"/>
+  <link rel="stylesheet" href="css/nav.css"/>
+  <link rel="stylesheet" href="css/sidebar.css"/>
+  <link rel="stylesheet" href="css/cards.css"/>
+  <link rel="stylesheet" href="css/table.css"/>
+  <link rel="stylesheet" href="css/footer.css"/>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html"><img src="images/logo.png" alt="PawPal Logo" style="height:34px;width:auto;object-fit:contain;flex-shrink:0;"><span>PawPal</span></a><span class="badge-admin">Admin Panel</span>
+  <div class="nav-links"><a href="home.html">Home</a><a href="pet-profile.html">Pets</a><a href="#">About</a><a href="#">Contact</a></div>
+</nav>
+<div class="layout">
+<aside>
+  <a class="sidebar-item" data-page="dashboard" href="index.html"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Dashboard</a>
+  <a class="sidebar-item" data-page="pets" href="pets.html"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/><path d="M8 9a1 1 0 1 0 2 0A1 1 0 0 0 8 9zm6 0a1 1 0 1 0 2 0A1 1 0 0 0 14 9zm-7 6s1.5 2 5 2 5-2 5-2"/></svg>Manage Pets</a>
+  <a class="sidebar-item" data-page="applications" href="applications.html"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Applications</a>
+  <a class="sidebar-item" data-page="analytics" href="analytics.html"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Analytics</a>
+  <a class="sidebar-item" data-page="settings" href="settings.html"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Settings</a>
+</aside>
+<main><div class="main-inner">
+  <div class="top-bar"><h1>Applications</h1><span class="date">May 15, 2026</span></div>
+
+  <!-- Status summary strip -->
+  <div class="app-summary-strip">
+    <div class="app-summary-item">
+      <div class="app-summary-dot" style="background:#E65100"></div>
+      <span class="app-summary-num">2</span>
+      <span class="app-summary-lbl">Pending</span>
+    </div>
+    <div class="app-summary-item">
+      <div class="app-summary-dot" style="background:#1565C0"></div>
+      <span class="app-summary-num">2</span>
+      <span class="app-summary-lbl">In Review</span>
+    </div>
+    <div class="app-summary-item">
+      <div class="app-summary-dot" style="background:#2E7D32"></div>
+      <span class="app-summary-num">1</span>
+      <span class="app-summary-lbl">Approved</span>
+    </div>
+    <div style="margin-left:auto;font-size:13px;color:var(--color-text-muted);display:flex;align-items:center;gap:6px;">
+      🐾 <em>5 total applications this week</em>
+    </div>
+  </div>
+
+  <style>
+    .app-summary-strip {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 16px 24px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+    .app-summary-item { display: flex; align-items: center; gap: 8px; }
+    .app-summary-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+    .app-summary-num { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--color-text); }
+    .app-summary-lbl { font-size: 13px; color: var(--color-text-muted); }
+  </style>
+
+  <div class="table-card">
+    <h3>All Applications</h3>
+    <table>
+      <thead><tr><th>Applicant</th><th>Pet</th><th>AI Score</th><th>Date</th><th>Status</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td><div class="applicant"><div class="avatar">SJ</div><span class="applicant-name">Sarah Johnson</span></div></td><td><div class="pet-name">Max</div><div class="pet-breed">Golden Retriever</div></td><td><span class="badge score-high">94</span></td><td class="muted">May 14, 2026</td><td><span class="badge badge-pending">Pending</span></td><td><a href="#" class="action-link">Review</a></td></tr>
+        <tr><td><div class="applicant"><div class="avatar">MC</div><span class="applicant-name">Michael Chen</span></div></td><td><div class="pet-name">Luna</div><div class="pet-breed">Siamese Cat</div></td><td><span class="badge score-mid">88</span></td><td class="muted">May 13, 2026</td><td><span class="badge badge-review">In Review</span></td><td><a href="#" class="action-link">Review</a></td></tr>
+        <tr><td><div class="applicant"><div class="avatar">ER</div><span class="applicant-name">Emily Rodriguez</span></div></td><td><div class="pet-name">Buddy</div><div class="pet-breed">Labrador Mix</div></td><td><span class="badge score-high">91</span></td><td class="muted">May 12, 2026</td><td><span class="badge badge-approved">Approved</span></td><td><a href="#" class="action-link">Review</a></td></tr>
+        <tr><td><div class="applicant"><div class="avatar">DP</div><span class="applicant-name">David Park</span></div></td><td><div class="pet-name">Whiskers</div><div class="pet-breed">Tabby Cat</div></td><td><span class="badge score-mid">76</span></td><td class="muted">May 11, 2026</td><td><span class="badge badge-pending">Pending</span></td><td><a href="#" class="action-link">Review</a></td></tr>
+        <tr><td><div class="applicant"><div class="avatar">JW</div><span class="applicant-name">Jessica Williams</span></div></td><td><div class="pet-name">Charlie</div><div class="pet-breed">Beagle</div></td><td><span class="badge score-mid">82</span></td><td class="muted">May 10, 2026</td><td><span class="badge badge-review">In Review</span></td><td><a href="#" class="action-link">Review</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div></main>
+<footer><div class="footer-inner"><div class="footer-top"><div><div class="footer-logo-wrap">
+          <img src="images/logo.png" alt="PawPal Logo" style="height:28px;width:auto;object-fit:contain;"/>
+          <span class="footer-logo">PawPal</span>
+        </div><div class="footer-tagline"><em>Because Every Paw Matters</em></div></div><div class="footer-links"><a href="#">About PawPal</a><a href="#">Adoption Process</a><a href="#">Contact Us</a><a href="#">Privacy Policy</a></div><div class="footer-social"><a href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a></div></div><div class="footer-bottom">© 2026 PawPal AI. All rights reserved.</div></div></footer><script src="js/main.js"></script></body></html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PawPal — Adoption Inquiry Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/global.css"/>
+  <link rel="stylesheet" href="css/shared-nav.css"/>
+  <link rel="stylesheet" href="css/shared-footer.css"/>
+  <link rel="stylesheet" href="css/inquiry-form.css"/>
+</head>
+<body style="min-height:100vh;display:flex;flex-direction:column;background:#FDF8F2;">
+
+<!-- ======= NAV ======= -->
+<nav class="pawpal-nav">
+  <a class="pawpal-nav-logo" href="home.html">
+    <img src="images/logo.png" alt="PawPal Logo"/>
+    <span class="pawpal-nav-logo-text">PawPal</span>
+  </a>
+  <div class="pawpal-nav-center">
+    <a class="pawpal-nav-link" href="home.html">Browse Pets</a>
+    <a class="pawpal-nav-link" href="#">About</a>
+    <a class="pawpal-nav-link" href="#">Adoption Process</a>
+    <a class="pawpal-nav-link" href="#">Contact</a>
+  </div>
+  <div class="pawpal-nav-auth">
+    <button class="pawpal-btn-cta" onclick="window.location='login.html'">Get Started</button>
+  </div>
+</nav>
+
+<!-- ======= MAIN ======= -->
+<main class="inq-main" style="position:relative;">
+  <!-- Decorative pet image strip -->
+
+  <div class="inq-inner">
+
+    <!-- Breadcrumb -->
+    <div class="inq-breadcrumb">
+      <a href="home.html">Browse Pets</a>
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="pet-profile.html">Mango</a>
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      <span>Apply</span>
+    </div>
+
+    <!-- Heading -->
+    <h1 class="inq-title">Adoption Inquiry Form</h1>
+    <p class="inq-subtitle">Thank you for your interest in adopting. Please fill out the form below to help us understand your home and lifestyle.</p>
+
+    <!-- ── FORM CARD ── -->
+    <div class="inq-card">
+
+      <!-- Progress bar -->
+      <div class="inq-progress">
+        <div class="inq-step done">
+          <div class="inq-step-dot">✓</div>
+          <span class="inq-step-label">Profile</span>
+          <div class="inq-step-line"></div>
+        </div>
+        <div class="inq-step active">
+          <div class="inq-step-dot">2</div>
+          <span class="inq-step-label">Application</span>
+          <div class="inq-step-line"></div>
+        </div>
+        <div class="inq-step">
+          <div class="inq-step-dot">3</div>
+          <span class="inq-step-label">Review</span>
+        </div>
+      </div>
+
+      <form id="inquiryForm" onsubmit="submitForm(event)">
+
+        <!-- Section 1: About You -->
+        <div class="inq-section">
+          <h2 class="inq-section-title">About You</h2>
+          <div class="inq-grid-3">
+            <div class="inq-field">
+              <label class="inq-label" for="fullName">Full Name</label>
+              <input class="inq-input" id="fullName" type="text" placeholder="John Doe" required/>
+            </div>
+            <div class="inq-field">
+              <label class="inq-label" for="email">Email Address</label>
+              <input class="inq-input" id="email" type="email" placeholder="john@example.com" required/>
+            </div>
+            <div class="inq-field">
+              <label class="inq-label" for="phone">Phone Number</label>
+              <input class="inq-input" id="phone" type="tel" placeholder="(555) 123-4567"/>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2: Your Lifestyle -->
+        <div class="inq-section">
+          <h2 class="inq-section-title">Your Lifestyle</h2>
+          <div class="inq-grid-3">
+            <div class="inq-field">
+              <label class="inq-label" for="living">Living Arrangement</label>
+              <div class="inq-select-wrap">
+                <select class="inq-select" id="living">
+                  <option value="" disabled selected>Select</option>
+                  <option value="house">House</option>
+                  <option value="apartment">Apartment</option>
+                  <option value="condo">Condo</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="inq-field">
+              <label class="inq-label" for="lifestyle">Activity Level</label>
+              <div class="inq-select-wrap">
+                <select class="inq-select" id="lifestyle">
+                  <option value="" disabled selected>Select</option>
+                  <option value="active">Very Active</option>
+                  <option value="moderate">Moderate</option>
+                  <option value="relaxed">Relaxed</option>
+                </select>
+              </div>
+            </div>
+            <div class="inq-field">
+              <label class="inq-label" for="hoursAlone">Hours Pet Left Alone</label>
+              <div class="inq-select-wrap">
+                <select class="inq-select" id="hoursAlone">
+                  <option value="" disabled selected>Select</option>
+                  <option value="0-2">0–2 hours</option>
+                  <option value="2-4">2–4 hours</option>
+                  <option value="4-6">4–6 hours</option>
+                  <option value="6-8">6–8 hours</option>
+                  <option value="8+">8+ hours</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: Your Home -->
+        <div class="inq-section">
+          <h2 class="inq-section-title">Your Home</h2>
+          <div class="inq-grid-2">
+            <div>
+              <p class="inq-pill-label">Children at home?</p>
+              <div class="inq-pill-row">
+                <button type="button" class="inq-pill" id="childYes" onclick="togglePill('child','yes')">Yes</button>
+                <button type="button" class="inq-pill" id="childNo"  onclick="togglePill('child','no')">No</button>
+              </div>
+            </div>
+            <div>
+              <p class="inq-pill-label">Other pets at home?</p>
+              <div class="inq-pill-row">
+                <button type="button" class="inq-pill" id="petsYes" onclick="togglePill('pets','yes')">Yes</button>
+                <button type="button" class="inq-pill" id="petsNo"  onclick="togglePill('pets','no')">No</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4: Experience & Motivation -->
+        <div class="inq-section">
+          <h2 class="inq-section-title">Experience & Motivation</h2>
+          <div class="inq-field" style="margin-bottom:16px">
+            <label class="inq-label" for="experience">Previous pet experience</label>
+            <textarea class="inq-textarea short" id="experience" placeholder="Tell us about any pets you've had in the past…"></textarea>
+          </div>
+          <div class="inq-field">
+            <label class="inq-label" for="motivation">Why do you want to adopt?</label>
+            <textarea class="inq-textarea tall" id="motivation" placeholder="Share your motivation for adopting a pet…"></textarea>
+          </div>
+        </div>
+
+        <!-- Form footer -->
+        <div class="inq-form-footer">
+          <div class="inq-secure">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            Your information is secure and will never be shared
+          </div>
+          <div class="inq-btn-row">
+            <button type="button" class="inq-btn-cancel" onclick="window.location='pet-profile.html'">Cancel</button>
+            <button type="submit" class="inq-btn-submit">Submit Application</button>
+          </div>
+        </div>
+
+      </form>
+
+      <!-- Success state -->
+      <div class="inq-success" id="successMsg">
+        <div class="inq-success-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <h2>Application Submitted!</h2>
+        <p>Thank you for applying to adopt Mango. Our team will review your application and get back to you within 2–3 business days.</p>
+        <button class="inq-success-btn" onclick="window.location='my-applications.html'">View My Applications</button>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- ======= FOOTER ======= -->
+<footer class="pawpal-footer">
+  <div class="pawpal-footer-inner">
+    <div class="pawpal-footer-top">
+      <div>
+        <div class="pawpal-footer-logo">
+          <img src="images/logo.png" alt="PawPal Logo"/>
+          <span class="pawpal-footer-logo-text">PawPal</span>
+        </div>
+        <p class="pawpal-footer-tagline">Connecting hearts, one paw at a time.</p>
+        <p class="pawpal-footer-motto">Because Every Paw Matters</p>
+      </div>
+      <div class="pawpal-footer-links">
+        <a href="#">About PawPal</a>
+        <a href="#">Adoption Process</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+      <div class="pawpal-footer-social">
+        <a href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      </div>
+    </div>
+    <div class="pawpal-footer-bottom">&copy; 2026 PawPal AI. All rights reserved. &nbsp;&middot;&nbsp; <em>Because Every Paw Matters</em></div>
+  </div>
+</footer>
+
+<script>
+  function togglePill(group, value) {
+    document.getElementById(`${group}Yes`).classList.toggle('active', value === 'yes');
+    document.getElementById(`${group}No`).classList.toggle('active', value === 'no');
+  }
+
+  function submitForm(e) {
+    e.preventDefault();
+    document.getElementById('inquiryForm').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+    document.querySelector('.inq-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+</script>
+</body>
+</html>

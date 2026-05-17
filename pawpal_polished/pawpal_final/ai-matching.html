@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PawPal — Find My Perfect Pet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&family=DM+Mono&display=swap" rel="stylesheet"/>
+  <!-- ✅ SHARED CSS -->
+  <link rel="stylesheet" href="css/global.css"/>
+  <link rel="stylesheet" href="css/shared-nav.css"/>
+  <link rel="stylesheet" href="css/shared-footer.css"/>
+  <!-- ✅ PAGE-SPECIFIC CSS -->
+  <link rel="stylesheet" href="css/ai-matching.css"/>
+</head>
+<body style="min-height:100vh; display:flex; flex-direction:column; background:#fff;">
+
+<!-- ======= NAV ======= -->
+<nav class="pawpal-nav" style="height:70px;">
+  <a class="pawpal-nav-logo" href="home.html">
+    <img src="images/logo.png" alt="PawPal Logo"/>
+    <span class="pawpal-nav-logo-text">PawPal</span>
+  </a>
+  <button class="pawpal-nav-exit" onclick="window.location='home.html'">Exit Quiz</button>
+</nav>
+
+<!-- ======= SPLIT BODY ======= -->
+<div class="wizard-body" style="flex:1; min-height:0;">
+
+  <!-- ── LEFT: QUIZ PANEL ── -->
+  <div class="quiz-panel">
+
+    <!-- Header row -->
+    <div class="quiz-header">
+      <div class="quiz-ai-label">
+        PawPal AI
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/>
+          <path d="M5 18l.75 2.25L8 21l-2.25.75L5 24l-.75-2.25L2 21l2.25-.75L5 18z"/>
+        </svg>
+      </div>
+      <span class="quiz-step" id="stepLabel">Step 2 of 6</span>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="quiz-progress-wrap">
+      <div class="quiz-progress-fill" id="progressFill" style="width:33.33%"></div>
+    </div>
+
+    <!-- ── Question 1: Home size ── -->
+    <div class="quiz-question">
+      <h2>What size home do you have?</h2>
+      <p>This helps us match you with pets who'll be comfortable in your space</p>
+
+      <div class="quiz-options-col" id="homeSizeGroup">
+        <button class="quiz-option selected" data-value="apartment" onclick="selectOption('homeSizeGroup', this)">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Apartment or small space
+        </button>
+        <button class="quiz-option" data-value="house" onclick="selectOption('homeSizeGroup', this)">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          House with yard
+        </button>
+        <button class="quiz-option" data-value="farm" onclick="selectOption('homeSizeGroup', this)">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Large property or farm
+        </button>
+      </div>
+    </div>
+
+    <!-- ── Question 2: Lifestyle ── -->
+    <div class="quiz-question">
+      <h2>What's your lifestyle like?</h2>
+      <p>We'll match your energy level with the perfect companion</p>
+
+      <div class="quiz-options-row" id="lifestyleGroup">
+        <button class="quiz-option-pill" data-value="active" onclick="selectPill('lifestyleGroup', this)">Active</button>
+        <button class="quiz-option-pill selected" data-value="moderate" onclick="selectPill('lifestyleGroup', this)">Moderate</button>
+        <button class="quiz-option-pill" data-value="relaxed" onclick="selectPill('lifestyleGroup', this)">Relaxed</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── RIGHT: LIVE RESULTS PANEL ── -->
+  <div class="results-panel">
+
+    <div class="results-header-row">
+      <h3>Your Top 3 Matches</h3>
+      <span class="results-live-pill">🐾 Live</span>
+    </div>
+    <p class="results-subtitle">Updated in real-time as you answer</p>
+
+    <style>
+      .results-header-row { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+      .results-live-pill {
+        font-size: 11px;
+        font-weight: 700;
+        background: var(--color-primary-soft);
+        color: var(--color-primary);
+        padding: 3px 10px;
+        border-radius: 999px;
+        letter-spacing: 0.03em;
+      }
+    </style>
+
+    <!-- AI recommendation box -->
+    <div class="ai-rec-box">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/>
+      </svg>
+      <p id="aiRec">Based on your answers, we recommend social, medium-energy dogs who adapt well to apartments</p>
+    </div>
+
+    <!-- Match cards -->
+    <div class="match-cards">
+
+      <div class="match-card">
+        <img src="https://images.unsplash.com/photo-1602241628512-459cdd3234fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Luna"/>
+        <div class="match-card-info">
+          <div class="match-card-name">Luna</div>
+          <div class="match-card-breed">Golden Retriever Mix</div>
+        </div>
+        <div class="match-pct">94% Match</div>
+      </div>
+
+      <div class="match-card">
+        <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Cooper"/>
+        <div class="match-card-info">
+          <div class="match-card-name">Cooper</div>
+          <div class="match-card-breed">Beagle</div>
+        </div>
+        <div class="match-pct">89% Match</div>
+      </div>
+
+      <div class="match-card">
+        <img src="https://images.unsplash.com/photo-1600077106724-946750eeaf3c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Charlie"/>
+        <div class="match-card-info">
+          <div class="match-card-name">Charlie</div>
+          <div class="match-card-breed">Pembroke Welsh Corgi</div>
+        </div>
+        <div class="match-pct">87% Match</div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <button class="btn-view-matches" onclick="window.location='home.html'">View All Matches</button>
+
+  </div>
+</div>
+
+<!-- ======= FOOTER ======= -->
+<footer class="pawpal-footer">
+  <div class="pawpal-footer-inner">
+    <div class="pawpal-footer-top">
+      <div>
+        <div class="pawpal-footer-logo">
+          <img src="images/logo.png" alt="PawPal Logo"/>
+          <span class="pawpal-footer-logo-text">PawPal</span>
+        </div>
+        <p class="pawpal-footer-tagline">Connecting hearts, one paw at a time.</p>
+        <p class="pawpal-footer-motto">Because Every Paw Matters</p>
+      </div>
+      <div class="pawpal-footer-links">
+        <a href="#">About PawPal</a>
+        <a href="#">Adoption Process</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+      <div class="pawpal-footer-social">
+        <a href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      </div>
+    </div>
+    <div class="pawpal-footer-bottom">&copy; 2026 PawPal AI. All rights reserved. &nbsp;&middot;&nbsp; <em>Because Every Paw Matters</em></div>
+  </div>
+</footer>
+
+<script>
+  // ── Select a full-width option (home size) ──
+  function selectOption(groupId, btn) {
+    document.querySelectorAll(`#${groupId} .quiz-option`)
+      .forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    updateRec();
+  }
+
+  // ── Select a pill option (lifestyle) ──
+  function selectPill(groupId, btn) {
+    document.querySelectorAll(`#${groupId} .quiz-option-pill`)
+      .forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    updateRec();
+  }
+
+  // ── Update AI recommendation text based on selections ──
+  function updateRec() {
+    const homeVal      = document.querySelector('#homeSizeGroup .selected')?.dataset.value || 'apartment';
+    const lifestyleVal = document.querySelector('#lifestyleGroup .selected')?.dataset.value || 'moderate';
+
+    const recs = {
+      'apartment-active':   'Based on your answers, we recommend energetic small breeds who love indoor play and short outdoor bursts.',
+      'apartment-moderate': 'Based on your answers, we recommend social, medium-energy dogs who adapt well to apartments.',
+      'apartment-relaxed':  'Based on your answers, we recommend calm lap cats or gentle small dogs perfect for cosy spaces.',
+      'house-active':       'Based on your answers, we recommend high-energy breeds who will love your yard and outdoor adventures.',
+      'house-moderate':     'Based on your answers, we recommend friendly family dogs who enjoy both outdoor play and relaxing indoors.',
+      'house-relaxed':      'Based on your answers, we recommend laid-back dogs or affectionate cats who enjoy a peaceful home.',
+      'farm-active':        'Based on your answers, we recommend working breeds with stamina — they will thrive on your property.',
+      'farm-moderate':      'Based on your answers, we recommend adaptable, intelligent breeds that enjoy space and companionship.',
+      'farm-relaxed':       'Based on your answers, we recommend gentle large breeds or independent cats who enjoy wide open spaces.',
+    };
+
+    const key = `${homeVal}-${lifestyleVal}`;
+    document.getElementById('aiRec').textContent = recs[key] || recs['apartment-moderate'];
+  }
+</script>
+
+</body>
+</html>

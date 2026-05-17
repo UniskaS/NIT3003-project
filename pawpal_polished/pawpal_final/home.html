@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PawPal — Find Your Perfect Companion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/global.css"/>
+  <link rel="stylesheet" href="css/shared-nav.css"/>
+  <link rel="stylesheet" href="css/shared-footer.css"/>
+  <link rel="stylesheet" href="css/home.css"/>
+</head>
+<body>
+
+<!-- ======= NAV ======= -->
+<nav class="pawpal-nav home-nav">
+  <div class="home-nav-inner">
+    <a class="pawpal-nav-logo home-nav-logo" href="home.html">
+      <img src="images/logo.png" alt="PawPal Logo" style="height:42px;width:auto;object-fit:contain;flex-shrink:0;"/>
+      <span class="pawpal-nav-logo-text">PawPal</span>
+    </a>
+    <div class="pawpal-nav-center home-nav-center">
+      <a class="pawpal-nav-link" href="#">Dogs</a>
+      <a class="pawpal-nav-link" href="#">Cats</a>
+      <a class="pawpal-nav-link" href="#">Other Pets</a>
+      <a class="pawpal-nav-link" href="#">Get Pet Support</a>
+      <div class="pawpal-dropdown-wrap dropdown-wrap">
+        <button class="pawpal-dropdown-btn dropdown-btn" id="aboutBtn" onclick="toggleDropdown()">
+          About PawPal
+          <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="pawpal-dropdown-menu dropdown-menu" id="aboutMenu">
+          <a href="#">Our Mission</a>
+          <a href="#">How It Works</a>
+          <a href="#">Our Team</a>
+          <a href="#">Partner Shelters</a>
+          <a href="#">Success Stories</a>
+        </div>
+      </div>
+    </div>
+    <div class="pawpal-nav-auth home-nav-auth">
+      <button class="pawpal-btn-login btn-login" onclick="window.location='login.html'">Log In</button>
+      <button class="pawpal-btn-signup btn-signup" onclick="window.location='login.html'">Sign Up</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ======= HERO ======= -->
+<section class="hero">
+
+  <!-- Decorative hearts -->
+  <div class="heart-bg" style="top:12%;left:3%"><svg style="width:14px;height:14px;opacity:.12;transform:rotate(-15deg);fill:#E8703A" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+  <div class="heart-bg" style="top:28%;left:7%"><svg style="width:10px;height:10px;opacity:.08;transform:rotate(10deg);fill:#E8703A" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+  <div class="heart-bg" style="top:8%;left:15%"><svg style="width:18px;height:18px;opacity:.10;transform:rotate(20deg);fill:#E8703A" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+  <div class="heart-bg" style="top:55%;left:2%"><svg style="width:12px;height:12px;opacity:.09;transform:rotate(-5deg);fill:#E8703A" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+  <div class="heart-bg" style="top:18%;right:4%"><svg style="width:16px;height:16px;opacity:.11;transform:rotate(-20deg);fill:#E8703A" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+  <div class="heart-bg" style="top:65%;right:3%"><svg style="width:14px;height:14px;opacity:.10;transform:rotate(-10deg);fill:#E8703A" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+  <div class="heart-bg" style="top:40%;right:8%"><svg style="width:10px;height:10px;opacity:.08;transform:rotate(15deg);fill:#E8703A" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+
+  <!-- Floating pets RIGHT side (beside the heading) -->
+  <div class="hero-pets-float">
+    <img class="pet-float-img" src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=200&h=200&fit=crop&auto=format" alt="Golden dog"/>
+    <img class="pet-float-img" src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=200&h=200&fit=crop&auto=format" alt="Tabby cat"/>
+    <img class="pet-float-img" src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?w=200&h=200&fit=crop&auto=format" alt="White rabbit"/>
+    <img class="pet-float-img" src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?w=200&h=200&fit=crop&auto=format" alt="Hamster"/>
+  </div>
+
+  <!-- Floating pets LEFT side (beside the heading) -->
+  <div class="hero-pets-float-left">
+    <img class="pet-float-img" src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=200&h=200&fit=crop&auto=format" alt="Cute puppy"/>
+    <img class="pet-float-img" src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=200&h=200&fit=crop&auto=format" alt="Orange cat"/>
+    <img class="pet-float-img" src="https://images.unsplash.com/photo-1452857297128-d9c29adba80b?w=200&h=200&fit=crop&auto=format" alt="Lop rabbit"/>
+    <img class="pet-float-img" src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=200&h=200&fit=crop&auto=format" alt="Happy dog"/>
+  </div>
+
+  <!-- Centre content -->
+  <div class="hero-inner">
+
+    <div class="hero-eyebrow">
+      <svg viewBox="0 0 24 24" fill="currentColor"><ellipse cx="5.5" cy="7" rx="2" ry="2.5"/><ellipse cx="9.5" cy="4.5" rx="1.8" ry="2.3"/><ellipse cx="14.5" cy="4.5" rx="1.8" ry="2.3"/><ellipse cx="18.5" cy="7" rx="2" ry="2.5"/><path d="M12 9c-3.5 0-7 2.5-6.5 6 .3 2.2 2 3.5 3.5 4.2.9.4 1.9.8 3 .8s2.1-.4 3-.8c1.5-.7 3.2-2 3.5-4.2.5-3.5-3-6-6.5-6z"/></svg>
+      Over 12,000 pets waiting for a home
+    </div>
+
+    <h1 class="hero-h1">
+      Find Your Perfect<br>
+      <em>Companion</em>
+    </h1>
+
+    <p class="hero-sub">
+      Connect with shelter pets in your area. Let our AI help you find the one who belongs with you.
+    </p>
+
+    <div style="font-size:13px;font-weight:600;color:#C85A3E;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:8px;opacity:0.8;">Because Every Paw Matters</div>
+
+    <div class="search-bar-wrap">
+      <div class="search-bar">
+        <div class="search-bar-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><ellipse cx="5.5" cy="7" rx="2" ry="2.5"/><ellipse cx="9.5" cy="4.5" rx="1.8" ry="2.3"/><ellipse cx="14.5" cy="4.5" rx="1.8" ry="2.3"/><ellipse cx="18.5" cy="7" rx="2" ry="2.5"/><path d="M12 9c-3.5 0-7 2.5-6.5 6 .3 2.2 2 3.5 3.5 4.2.9.4 1.9.8 3 .8s2.1-.4 3-.8c1.5-.7 3.2-2 3.5-4.2.5-3.5-3-6-6.5-6z"/></svg>
+        </div>
+        <input id="searchInput" type="text" placeholder="Search pets by name, breed, or location..." oninput="handleSearch(this)"/>
+        <button class="search-clear" id="clearBtn" onclick="clearSearch()">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <button class="search-btn" onclick="doSearch()">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Search
+        </button>
+      </div>
+    </div>
+
+    <div class="filter-pills">
+      <span class="filter-label">Filter:</span>
+      <button class="filter-pill" onclick="toggleFilter(this)">Dogs</button>
+      <button class="filter-pill" onclick="toggleFilter(this)">Cats</button>
+      <button class="filter-pill" onclick="toggleFilter(this)">Active</button>
+      <button class="filter-pill" onclick="toggleFilter(this)">Apartment Friendly</button>
+      <button class="filter-pill" onclick="toggleFilter(this)">Good with Kids</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- Wavy divider -->
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,24 C180,48 360,0 540,24 C720,48 900,0 1080,24 C1260,48 1380,10 1440,24 L1440,48 L0,48 Z" fill="#FCEEE4"/>
+  </svg>
+</div>
+
+<!-- ======= AI BANNER ======= -->
+<div class="ai-banner">
+  <div class="ai-banner-inner">
+    <div class="ai-banner-left">
+      <div class="ai-banner-icon">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/><path d="M5 18l.75 2.25L8 21l-2.25.75L5 24l-.75-2.25L2 21l2.25-.75L5 18z"/></svg>
+      </div>
+      <div>
+        <span class="ai-banner-strong">Not sure where to start?</span>
+        <span class="ai-banner-text">Our AI considers your lifestyle, home, and preferences to find your ideal match.</span>
+      </div>
+    </div>
+    <button class="btn-ai-match" onclick="window.location='ai-matching.html'">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/></svg>
+      Find My Perfect Pet
+    </button>
+  </div>
+</div>
+
+
+
+<!-- ======= PET GRID (UNCHANGED) ======= -->
+<section class="pet-section">
+  <div class="pet-section-header">
+    <div>
+      <h2>Pets Looking for a Home</h2>
+      <p>Showing 8 adorable companions near you</p>
+    </div>
+    <div class="sort-wrap">
+      <span class="sort-label">Sort by:</span>
+      <select class="sort-select">
+        <option>Newest</option>
+        <option>Closest</option>
+        <option>Best Match</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="pet-grid" id="petGrid">
+
+    <div class="pet-card">
+      <div class="pet-card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1591160690555-5debfba289f0?w=400&h=220&fit=crop&auto=format" alt="Biscuit"/>
+        <button class="pet-card-heart"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+        <span class="pet-card-type">Dog</span>
+      </div>
+      <div class="pet-card-body">
+        <div class="pet-card-name">Biscuit</div>
+        <div class="pet-card-breed">Golden Retriever &middot; 3 years</div>
+        <div class="pet-card-location"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Grandville, NSW</div>
+        <div class="pet-card-badges"><span class="pet-badge-tag badge-kids">Good with Kids</span><span class="pet-badge-tag badge-playful">Playful</span></div>
+        <button class="pet-card-cta" onclick="window.location='pet-profile.html'">View Profile</button>
+      </div>
+    </div>
+
+    <div class="pet-card">
+      <div class="pet-card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1503256207526-0d5d80fa2f47?w=400&h=220&fit=crop&auto=format" alt="Luna"/>
+        <button class="pet-card-heart"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+        <span class="pet-card-type">Dog</span>
+      </div>
+      <div class="pet-card-body">
+        <div class="pet-card-name">Luna</div>
+        <div class="pet-card-breed">Border Collie &middot; 2 years</div>
+        <div class="pet-card-location"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Hurstville, NSW</div>
+        <div class="pet-card-badges"><span class="pet-badge-tag badge-active">Active</span><span class="pet-badge-tag badge-smart">Smart</span></div>
+        <button class="pet-card-cta" onclick="window.location='pet-profile.html'">View Profile</button>
+      </div>
+    </div>
+
+    <div class="pet-card">
+      <div class="pet-card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1561754050-9a1ee0470c73?w=400&h=220&fit=crop&auto=format" alt="Max"/>
+        <button class="pet-card-heart"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+        <span class="pet-card-type">Dog</span>
+      </div>
+      <div class="pet-card-body">
+        <div class="pet-card-name">Max</div>
+        <div class="pet-card-breed">French Bulldog &middot; 1 year</div>
+        <div class="pet-card-location"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Perth</div>
+        <div class="pet-card-badges"><span class="pet-badge-tag badge-apartment">Apartment Friendly</span><span class="pet-badge-tag badge-playful">Playful</span></div>
+        <button class="pet-card-cta" onclick="window.location='pet-profile.html'">View Profile</button>
+      </div>
+    </div>
+
+    <div class="pet-card">
+      <div class="pet-card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1631048905843-88f82fba8fd4?w=400&h=220&fit=crop&auto=format" alt="Rosie"/>
+        <button class="pet-card-heart"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+        <span class="pet-card-type">Dog</span>
+      </div>
+      <div class="pet-card-body">
+        <div class="pet-card-name">Rosie</div>
+        <div class="pet-card-breed">Beagle &middot; 4 years</div>
+        <div class="pet-card-location"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Browland, QLD</div>
+        <div class="pet-card-badges"><span class="pet-badge-tag badge-kids">Good with Kids</span><span class="pet-badge-tag badge-gentle">Gentle</span></div>
+        <button class="pet-card-cta" onclick="window.location='pet-profile.html'">View Profile</button>
+      </div>
+    </div>
+
+    <div class="pet-card">
+      <div class="pet-card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1577696393108-d99e9f054fff?w=400&h=220&fit=crop&auto=format" alt="Mochi"/>
+        <button class="pet-card-heart"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+        <span class="pet-card-type">Cat</span>
+      </div>
+      <div class="pet-card-body">
+        <div class="pet-card-name">Mochi</div>
+        <div class="pet-card-breed">Siamese Mix &middot; 2 years</div>
+        <div class="pet-card-location"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Queensland</div>
+        <div class="pet-card-badges"><span class="pet-badge-tag badge-apartment">Apartment Friendly</span><span class="pet-badge-tag badge-calm">Calm</span></div>
+        <button class="pet-card-cta" onclick="window.location='pet-profile.html'">View Profile</button>
+      </div>
+    </div>
+
+    <div class="pet-card">
+      <div class="pet-card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400&h=220&fit=crop&auto=format" alt="Leo"/>
+        <button class="pet-card-heart"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+        <span class="pet-card-type">Cat</span>
+      </div>
+      <div class="pet-card-body">
+        <div class="pet-card-name">Leo</div>
+        <div class="pet-card-breed">Maine Coon &middot; 5 years</div>
+        <div class="pet-card-location"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Gold Coast</div>
+        <div class="pet-card-badges"><span class="pet-badge-tag badge-gentle">Gentle</span><span class="pet-badge-tag badge-playful">Playful</span></div>
+        <button class="pet-card-cta" onclick="window.location='pet-profile.html'">View Profile</button>
+      </div>
+    </div>
+
+    <div class="pet-card">
+      <div class="pet-card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1478098711619-5ab0b478d6e6?w=400&h=220&fit=crop&auto=format" alt="Nala"/>
+        <button class="pet-card-heart"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+        <span class="pet-card-type">Cat</span>
+      </div>
+      <div class="pet-card-body">
+        <div class="pet-card-name">Nala</div>
+        <div class="pet-card-breed">Tabby &middot; 1 year</div>
+        <div class="pet-card-location"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Brisbane</div>
+        <div class="pet-card-badges"><span class="pet-badge-tag badge-active">Active</span><span class="pet-badge-tag badge-curious">Curious</span></div>
+        <button class="pet-card-cta" onclick="window.location='pet-profile.html'">View Profile</button>
+      </div>
+    </div>
+
+    <div class="pet-card">
+      <div class="pet-card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1452857297128-d9c29adba80b?w=400&h=220&fit=crop&auto=format" alt="Coco"/>
+        <button class="pet-card-heart"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+        <span class="pet-card-type">Rabbit</span>
+      </div>
+      <div class="pet-card-body">
+        <div class="pet-card-name">Coco</div>
+        <div class="pet-card-breed">Holland Lop &middot; 2 years</div>
+        <div class="pet-card-location"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Tempe,NSW</div>
+        <div class="pet-card-badges"><span class="pet-badge-tag badge-apartment">Apartment Friendly</span><span class="pet-badge-tag badge-gentle">Gentle</span></div>
+        <button class="pet-card-cta" onclick="window.location='pet-profile.html'">View Profile</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="load-more-wrap">
+    <button class="btn-load-more">View all 12,000+ pets</button>
+  </div>
+</section>
+
+<!-- ======= HOW IT WORKS ======= -->
+<section class="how-section">
+  <div class="how-section-inner-shape">
+    <div class="how-inner">
+      <div class="how-header">
+        <h2>How PawPal Works</h2>
+        <p>Three simple steps to finding your new best friend</p>
+      </div>
+      <div class="how-grid">
+        <div class="how-card">
+          <img class="how-card-img" src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=150&h=150&fit=crop&auto=format" alt="Happy dog"/>
+          <h3>Tell Us About You</h3>
+          <p>Share your living situation, lifestyle, and what you're looking for in a companion.</p>
+        </div>
+        <div class="how-card">
+          <img class="how-card-img" src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=150&h=150&fit=crop&auto=format" alt="Curious cat"/>
+          <h3>Get AI Matches</h3>
+          <p>Our AI finds compatible pets from 500+ partner shelters based on your unique profile.</p>
+        </div>
+        <div class="how-card">
+          <img class="how-card-img" src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=150&h=150&fit=crop&auto=format" alt="Puppy ready to adopt"/>
+          <h3>Meet &amp; Adopt</h3>
+          <p>Visit your matches, fall in love, and complete the adoption — we'll guide you every step.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= FOOTER ======= -->
+<footer class="home-footer">
+  <div class="home-footer-inner">
+    <div class="home-footer-top">
+      <div>
+        <div class="home-footer-logo" style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+          <img src="images/logo.png" alt="PawPal Logo" style="height:42px;width:auto;object-fit:contain;">
+          <span style="font-family:var(--font-display);font-size:20px;font-weight:700;color:#C85A3E;">PawPal</span>
+        </div>
+        <p class="home-footer-tagline">Because Every Paw Matters — Connecting hearts, one paw at a time.</p>
+        <div class="home-footer-social">
+          <a class="home-social-btn" href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a class="home-social-btn" href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a class="home-social-btn" href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="home-footer-col-title">Quick Links</div>
+        <ul class="home-footer-links">
+          <li><a href="#">About PawPal</a></li>
+          <li><a href="#">Adoption Process</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="home-footer-col-title">Stay Connected</div>
+        <p class="home-footer-newsletter-text">Get weekly pet spotlights and adoption tips in your inbox.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="your@email.com"/>
+          <button>Join</button>
+        </div>
+      </div>
+    </div>
+    <div class="home-footer-bottom">
+      © 2026 PawPal AI. All rights reserved. Made with
+      <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      for pets everywhere.
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleDropdown() {
+    const btn  = document.getElementById('aboutBtn');
+    const menu = document.getElementById('aboutMenu');
+    btn.classList.toggle('open');
+    menu.classList.toggle('open');
+  }
+  document.addEventListener('click', e => {
+    const wrap = document.querySelector('.dropdown-wrap');
+    if (!wrap.contains(e.target)) {
+      document.getElementById('aboutBtn').classList.remove('open');
+      document.getElementById('aboutMenu').classList.remove('open');
+    }
+  });
+  function handleSearch(input) {
+    document.getElementById('clearBtn').classList.toggle('visible', input.value.length > 0);
+  }
+  function clearSearch() {
+    const input = document.getElementById('searchInput');
+    input.value = '';
+    document.getElementById('clearBtn').classList.remove('visible');
+    input.focus();
+  }
+  function doSearch() {
+    const q = document.getElementById('searchInput').value.trim().toLowerCase();
+    document.querySelectorAll('.pet-card').forEach(card => {
+      card.style.display = (!q || card.textContent.toLowerCase().includes(q)) ? '' : 'none';
+    });
+  }
+  function toggleFilter(btn) {
+    btn.classList.toggle('active');
+    applyFilters();
+  }
+  function applyFilters() {
+    const active = [...document.querySelectorAll('.filter-pill.active')].map(b => b.textContent.trim().toLowerCase());
+    document.querySelectorAll('.pet-card').forEach(card => {
+      if (active.length === 0) { card.style.display = ''; return; }
+      const type   = card.querySelector('.pet-card-type').textContent.trim().toLowerCase();
+      const badges = [...card.querySelectorAll('.pet-badge-tag')].map(b => b.textContent.trim().toLowerCase());
+      const match  = active.some(f => {
+        if (f === 'dogs') return type === 'dog';
+        if (f === 'cats') return type === 'cat';
+        return badges.some(b => b.includes(f.split(' ')[0]));
+      });
+      card.style.display = match ? '' : 'none';
+    });
+  }
+</script>
+
+</body>
+</html>

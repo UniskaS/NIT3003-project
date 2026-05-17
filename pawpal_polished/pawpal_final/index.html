@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PawPal — Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&family=DM+Mono&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/global.css"/>
+  <link rel="stylesheet" href="css/shared-nav.css"/>
+  <link rel="stylesheet" href="css/shared-footer.css"/>
+  <link rel="stylesheet" href="css/nav.css"/>
+  <link rel="stylesheet" href="css/sidebar.css"/>
+  <link rel="stylesheet" href="css/cards.css"/>
+  <link rel="stylesheet" href="css/table.css"/>
+  <link rel="stylesheet" href="css/footer.css"/>
+</head>
+<body>
+
+<!-- ======= NAV ======= -->
+<nav class="pawpal-nav">
+  <a class="pawpal-nav-logo" href="index.html">
+    <img src="images/logo.png" alt="PawPal Logo"/>
+    <span class="pawpal-nav-logo-text">PawPal</span>
+    <span class="pawpal-badge-admin">Admin Panel</span>
+  </a>
+  <div class="pawpal-nav-right">
+    <a href="home.html">Home</a>
+    <a href="pet-profile.html">Pets</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
+<!-- ======= LAYOUT ======= -->
+<div class="layout">
+
+  <!-- ======= SIDEBAR ======= -->
+  <aside>
+    <a class="sidebar-item active" data-page="dashboard" href="index.html">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      Dashboard
+    </a>
+    <a class="sidebar-item" data-page="pets" href="pets.html">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/><path d="M8 9a1 1 0 1 0 2 0A1 1 0 0 0 8 9zm6 0a1 1 0 1 0 2 0A1 1 0 0 0 14 9zm-7 6s1.5 2 5 2 5-2 5-2"/></svg>
+      Manage Pets
+    </a>
+    <a class="sidebar-item" data-page="applications" href="applications.html">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      Applications
+    </a>
+    <a class="sidebar-item" data-page="analytics" href="analytics.html">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      Analytics
+    </a>
+    <a class="sidebar-item" data-page="settings" href="settings.html">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      Settings
+    </a>
+  </aside>
+
+  <!-- ======= MAIN ======= -->
+  <main>
+    <div class="main-inner">
+
+      <div class="top-bar">
+        <h1>Overview</h1>
+        <span class="date">May 15, 2026</span>
+      </div>
+
+      <!-- WELCOME BANNER -->
+      <div class="dashboard-welcome">
+        <div class="dashboard-welcome-text">
+          <div class="dashboard-welcome-eyebrow">🐾 Good morning, Admin</div>
+          <h2 class="dashboard-welcome-title">Welcome back to PawPal</h2>
+          <p class="dashboard-welcome-sub">Here's what's happening with your shelter today.</p>
+        </div>
+        <div class="dashboard-welcome-paws" aria-hidden="true">
+          <svg viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="paw-deco-svg">
+            <ellipse cx="40" cy="55" rx="16" ry="20" fill="#C85A3E" opacity="0.12"/>
+            <circle cx="22" cy="38" r="7" fill="#C85A3E" opacity="0.10"/>
+            <circle cx="40" cy="32" r="8" fill="#C85A3E" opacity="0.10"/>
+            <circle cx="58" cy="38" r="7" fill="#C85A3E" opacity="0.10"/>
+            <ellipse cx="120" cy="55" rx="16" ry="20" fill="#C85A3E" opacity="0.08"/>
+            <circle cx="102" cy="38" r="7" fill="#C85A3E" opacity="0.06"/>
+            <circle cx="120" cy="32" r="8" fill="#C85A3E" opacity="0.06"/>
+            <circle cx="138" cy="38" r="7" fill="#C85A3E" opacity="0.06"/>
+          </svg>
+        </div>
+        <div class="dashboard-quick-actions">
+          <a href="add-pet.html" class="dashboard-quick-btn">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add New Pet
+          </a>
+          <a href="applications.html" class="dashboard-quick-btn dashboard-quick-btn-outline">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            View Applications
+          </a>
+        </div>
+      </div>
+
+      <style>
+        .dashboard-welcome {
+          background: linear-gradient(135deg, #fff 60%, #FFF0EB 100%);
+          border: 1px solid var(--color-border);
+          border-radius: 18px;
+          padding: 28px 32px;
+          margin-bottom: 28px;
+          display: flex;
+          align-items: center;
+          gap: 24px;
+          box-shadow: var(--shadow-sm);
+          position: relative;
+          overflow: hidden;
+        }
+        .dashboard-welcome-text { flex: 1; }
+        .dashboard-welcome-eyebrow { font-size: 13px; color: var(--color-primary); font-weight: 600; margin-bottom: 4px; }
+        .dashboard-welcome-title { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--color-text); margin-bottom: 4px; }
+        .dashboard-welcome-sub { font-size: 14px; color: var(--color-text-muted); }
+        .dashboard-welcome-paws { flex-shrink: 0; opacity: 0.9; }
+        .paw-deco-svg { width: 160px; height: 64px; }
+        .dashboard-quick-actions { display: flex; gap: 10px; flex-shrink: 0; }
+        .dashboard-quick-btn {
+          display: inline-flex; align-items: center; gap: 6px;
+          padding: 10px 18px; border-radius: 10px;
+          background: var(--color-primary); color: #fff;
+          font-size: 13px; font-weight: 600; text-decoration: none;
+          transition: background 0.18s;
+        }
+        .dashboard-quick-btn:hover { background: var(--color-primary-dark); }
+        .dashboard-quick-btn svg { width: 14px; height: 14px; }
+        .dashboard-quick-btn-outline {
+          background: transparent; color: var(--color-primary);
+          border: 1.5px solid var(--color-primary);
+        }
+        .dashboard-quick-btn-outline:hover { background: var(--color-primary-soft); }
+        @media (max-width: 900px) {
+          .dashboard-welcome { flex-wrap: wrap; }
+          .dashboard-welcome-paws { display: none; }
+          .dashboard-quick-actions { flex-wrap: wrap; }
+        }
+      </style>
+
+      <!-- STAT CARDS -->
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#FFE5D9">
+            <svg fill="none" stroke="#C85A3E" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/><path d="M8 9a1 1 0 1 0 2 0A1 1 0 0 0 8 9zm6 0a1 1 0 1 0 2 0A1 1 0 0 0 14 9zm-7 6s1.5 2 5 2 5-2 5-2"/></svg>
+          </div>
+          <div class="stat-label">Available Pets</div>
+          <div class="stat-value">47</div>
+          <div class="stat-trend trend-up">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            +12% from last month
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#E8F5E7">
+            <svg fill="none" stroke="#8BA888" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div class="stat-label">Open Applications</div>
+          <div class="stat-value">23</div>
+          <div class="stat-trend trend-up">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            +8% from last month
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#FEF3E7">
+            <svg fill="none" stroke="#F4A259" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <div class="stat-label">Adopted This Month</div>
+          <div class="stat-value">15</div>
+          <div class="stat-trend trend-up">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            +23% from last month
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#F0ECF5">
+            <svg fill="none" stroke="#8B7AA8" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="stat-label">Email Success Rate</div>
+          <div class="stat-value">92%</div>
+          <div class="stat-trend trend-down">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg>
+            -2% from last month
+          </div>
+        </div>
+      </div>
+
+      <!-- APPLICATIONS TABLE -->
+      <div class="table-card">
+        <h3>Recent Applications</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Applicant</th><th>Pet</th><th>AI Score</th><th>Date</th><th>Status</th><th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><div class="applicant"><div class="avatar">SJ</div><span class="applicant-name">Sarah Johnson</span></div></td>
+              <td><div class="pet-name">Max</div><div class="pet-breed">Golden Retriever</div></td>
+              <td><span class="badge score-high">94</span></td>
+              <td class="muted">May 14, 2026</td>
+              <td><span class="badge badge-pending">Pending</span></td>
+              <td><a href="applications.html" class="action-link">Review</a></td>
+            </tr>
+            <tr>
+              <td><div class="applicant"><div class="avatar">MC</div><span class="applicant-name">Michael Chen</span></div></td>
+              <td><div class="pet-name">Luna</div><div class="pet-breed">Siamese Cat</div></td>
+              <td><span class="badge score-mid">88</span></td>
+              <td class="muted">May 13, 2026</td>
+              <td><span class="badge badge-review">In Review</span></td>
+              <td><a href="applications.html" class="action-link">Review</a></td>
+            </tr>
+            <tr>
+              <td><div class="applicant"><div class="avatar">ER</div><span class="applicant-name">Emily Rodriguez</span></div></td>
+              <td><div class="pet-name">Buddy</div><div class="pet-breed">Labrador Mix</div></td>
+              <td><span class="badge score-high">91</span></td>
+              <td class="muted">May 12, 2026</td>
+              <td><span class="badge badge-approved">Approved</span></td>
+              <td><a href="applications.html" class="action-link">Review</a></td>
+            </tr>
+            <tr>
+              <td><div class="applicant"><div class="avatar">DP</div><span class="applicant-name">David Park</span></div></td>
+              <td><div class="pet-name">Whiskers</div><div class="pet-breed">Tabby Cat</div></td>
+              <td><span class="badge score-mid">76</span></td>
+              <td class="muted">May 11, 2026</td>
+              <td><span class="badge badge-pending">Pending</span></td>
+              <td><a href="applications.html" class="action-link">Review</a></td>
+            </tr>
+            <tr>
+              <td><div class="applicant"><div class="avatar">JW</div><span class="applicant-name">Jessica Williams</span></div></td>
+              <td><div class="pet-name">Charlie</div><div class="pet-breed">Beagle</div></td>
+              <td><span class="badge score-mid">82</span></td>
+              <td class="muted">May 10, 2026</td>
+              <td><span class="badge badge-review">In Review</span></td>
+              <td><a href="applications.html" class="action-link">Review</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- ======= FOOTER ======= -->
+<footer class="pawpal-footer">
+  <div class="pawpal-footer-inner">
+    <div class="pawpal-footer-top">
+      <div>
+        <div class="pawpal-footer-logo">
+          <img src="images/logo.png" alt="PawPal Logo"/>
+          <span class="pawpal-footer-logo-text">PawPal</span>
+        </div>
+        <p class="pawpal-footer-tagline">Connecting hearts, one paw at a time.</p>
+        <p class="pawpal-footer-motto">Because Every Paw Matters</p>
+      </div>
+      <div class="pawpal-footer-links">
+        <a href="#">About PawPal</a>
+        <a href="#">Adoption Process</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+      <div class="pawpal-footer-social">
+        <a href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      </div>
+    </div>
+    <div class="pawpal-footer-bottom">&copy; 2026 PawPal AI. All rights reserved. &nbsp;&middot;&nbsp; <em>Because Every Paw Matters</em></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

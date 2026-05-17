@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PawPal — Max the Golden Retriever</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&family=DM+Mono&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/global.css"/>
+  <link rel="stylesheet" href="css/shared-nav.css"/>
+  <link rel="stylesheet" href="css/shared-footer.css"/>
+  <link rel="stylesheet" href="css/pet-profile.css"/>
+</head>
+<body>
+
+<!-- ======= NAV ======= -->
+<nav class="pawpal-nav">
+  <a class="pawpal-nav-logo" href="home.html">
+    <img src="images/logo.png" alt="PawPal Logo"/>
+    <span class="pawpal-nav-logo-text">PawPal</span>
+  </a>
+  <div class="pawpal-nav-center">
+    <a class="pawpal-nav-link" href="home.html">Browse Pets</a>
+    <a class="pawpal-nav-link" href="#">About Us</a>
+    <a class="pawpal-nav-link" href="#">AI Features</a>
+    <a class="pawpal-nav-link" href="#">Contact</a>
+  </div>
+  <div class="pawpal-nav-auth">
+    <button class="pawpal-btn-cta" onclick="window.location='login.html'">Get Started</button>
+  </div>
+</nav>
+
+<!-- ======= MAIN ======= -->
+<main class="pet-page-main">
+  <div class="pet-page-inner">
+    <div class="pet-layout">
+
+      <!-- ── LEFT: Photo Gallery ── -->
+      <div class="pet-gallery">
+
+        <div class="main-image-wrap">
+          <img id="mainPhoto"
+            src="https://images.unsplash.com/photo-1558788353-f76d92427f16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+            alt="Max the Golden Retriever"/>
+        </div>
+
+        <!-- Thumbnails: 3-col grid, fully equal -->
+        <div class="thumbnails">
+          <button class="thumbnail active" onclick="switchPhoto(this, 'https://images.unsplash.com/photo-1558788353-f76d92427f16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080')">
+            <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=300" alt="Photo 1"/>
+          </button>
+          <button class="thumbnail" onclick="switchPhoto(this, 'https://images.unsplash.com/photo-1602241628512-459cdd3234fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080')">
+            <img src="https://images.unsplash.com/photo-1602241628512-459cdd3234fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=300" alt="Photo 2"/>
+          </button>
+          <button class="thumbnail" onclick="switchPhoto(this, 'https://images.unsplash.com/photo-1693615775129-f2004d6e3e0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080')">
+            <img src="https://images.unsplash.com/photo-1693615775129-f2004d6e3e0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=300" alt="Photo 3"/>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- ── RIGHT: Pet Info ── -->
+      <div class="pet-info">
+
+        <h1 class="pet-name">Max</h1>
+
+        <div class="pet-badges">
+          <span class="pet-badge pet-badge-available">Available</span>
+          <span class="pet-badge pet-badge-type">Dog</span>
+        </div>
+
+        <div class="pet-meta">
+          <span>Golden Retriever</span>
+          <span class="pet-meta-sep">•</span>
+          <span>3 years old</span>
+          <span class="pet-meta-sep">•</span>
+          <span>Large (65 lbs)</span>
+        </div>
+
+        <div>
+          <div class="personality-label">Personality</div>
+          <div class="personality-tags">
+            <span class="personality-tag">Friendly</span>
+            <span class="personality-tag">Energetic</span>
+            <span class="personality-tag">Loves Water</span>
+            <span class="personality-tag">Good with Kids</span>
+            <span class="personality-tag">Playful</span>
+            <span class="personality-tag">Loyal</span>
+          </div>
+        </div>
+
+        <div class="ai-bio-box">
+          <div class="ai-bio-header">
+            <div class="ai-bio-title">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/>
+                <path d="M5 18l.75 2.25L8 21l-2.25.75L5 24l-.75-2.25L2 21l2.25-.75L5 18z"/>
+                <path d="M19 3l.5 1.5L21 5l-1.5.5L19 7l-.5-1.5L17 5l1.5-.5L19 3z"/>
+              </svg>
+              AI Generated Bio
+            </div>
+            <span class="ai-powered-badge">Powered by PawPal AI</span>
+          </div>
+          <p class="ai-bio-text">
+            Meet Max, a gentle soul with a heart of gold! This lovable Golden Retriever has been patiently
+            waiting for his forever home. Max thrives on human companionship and would make an excellent
+            family dog. He's particularly great with children, showing remarkable patience and gentleness.
+            Max loves outdoor activities, especially swimming and playing fetch. His friendly demeanor
+            makes him popular at the shelter, greeting everyone with enthusiastic tail wags. Max is
+            house-trained, knows basic commands, and walks beautifully on a leash. He's looking for an
+            active family who can match his energy and give him the love he deserves.
+          </p>
+        </div>
+
+        <div class="staff-box">
+          <span class="staff-only-badge">Staff Only — Hidden from Public</span>
+          <div class="staff-field">
+            <label class="staff-field-label">Medical History</label>
+            <textarea class="staff-textarea">Up-to-date on all vaccinations. Neutered. No known allergies or chronic conditions. Regular dental cleanings recommended.</textarea>
+          </div>
+          <div class="staff-field">
+            <label class="staff-field-label">Rescue Background</label>
+            <textarea class="staff-textarea">Surrendered by previous owner due to relocation. Well-socialised and trained. No behavioural issues noted during shelter stay.</textarea>
+          </div>
+        </div>
+
+        <div class="pet-actions">
+          <button class="btn-adopt" onclick="window.location='inquiry-form.html'">Apply to Adopt</button>
+          <button class="btn-vets">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            Find Nearby Vets
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ======= FOOTER ======= -->
+<footer class="pawpal-footer">
+  <div class="pawpal-footer-inner">
+    <div class="pawpal-footer-top">
+      <div>
+        <div class="pawpal-footer-logo">
+          <img src="images/logo.png" alt="PawPal Logo"/>
+          <span class="pawpal-footer-logo-text">PawPal</span>
+        </div>
+        <p class="pawpal-footer-tagline">Connecting hearts, one paw at a time.</p>
+        <p class="pawpal-footer-motto">Because Every Paw Matters</p>
+      </div>
+      <div class="pawpal-footer-links">
+        <a href="#">About PawPal</a>
+        <a href="#">Adoption Process</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+      <div class="pawpal-footer-social">
+        <a href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      </div>
+    </div>
+    <div class="pawpal-footer-bottom">&copy; 2026 PawPal AI. All rights reserved. &nbsp;&middot;&nbsp; <em>Because Every Paw Matters</em></div>
+  </div>
+</footer>
+
+<script>
+  function switchPhoto(btn, src) {
+    document.getElementById('mainPhoto').src = src;
+    document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+  }
+</script>
+</body>
+</html>

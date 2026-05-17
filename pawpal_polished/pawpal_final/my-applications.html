@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PawPal — My Applications</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <!-- ✅ SHARED CSS -->
+  <link rel="stylesheet" href="css/global.css"/>
+  <link rel="stylesheet" href="css/shared-nav.css"/>
+  <link rel="stylesheet" href="css/shared-footer.css"/>
+  <!-- ✅ PAGE-SPECIFIC CSS -->
+  <link rel="stylesheet" href="css/my-applications.css"/>
+</head>
+<body style="min-height:100vh; display:flex; flex-direction:column; background:#FDF8F2;">
+
+<!-- ======= NAV ======= -->
+<nav class="pawpal-nav">
+  <a class="pawpal-nav-logo" href="home.html">
+    <img src="images/logo.png" alt="PawPal Logo"/>
+    <span class="pawpal-nav-logo-text">PawPal</span>
+  </a>
+  <div class="pawpal-nav-center">
+    <a class="pawpal-nav-link" href="home.html">Find Pets</a>
+    <a class="pawpal-nav-link" href="#">How It Works</a>
+    <a class="pawpal-nav-link" href="#">About</a>
+    <a class="pawpal-nav-link" href="#">Contact</a>
+  </div>
+  <div class="pawpal-nav-auth">
+    <button class="pawpal-btn-cta" onclick="window.location='login.html'">Sign In</button>
+  </div>
+</nav>
+
+<!-- ======= BODY ======= -->
+<div class="app-body">
+
+  <!-- USER SIDEBAR -->
+  <aside class="app-sidebar">
+    <a class="app-sidebar-item" href="home.html">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+      </svg>
+      Browse Pets
+    </a>
+    <a class="app-sidebar-item active" href="my-applications.html">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+        <line x1="16" y1="13" x2="8" y2="13"/>
+        <line x1="16" y1="17" x2="8" y2="17"/>
+      </svg>
+      My Applications
+    </a>
+    <a class="app-sidebar-item" href="#">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+      </svg>
+      Find a Vet
+    </a>
+    <a class="app-sidebar-item" href="#">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </svg>
+      My Profile
+    </a>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="app-main">
+    <div class="myapp-top-bar">
+      <div>
+        <h1>My Applications</h1>
+        <p class="myapp-subtitle">🐾 Track your adoption journey — every paw deserves a loving home.</p>
+      </div>
+      <div class="myapp-stats-strip">
+        <div class="myapp-stat"><span class="myapp-stat-num">3</span><span class="myapp-stat-lbl">Applications</span></div>
+        <div class="myapp-stat-div"></div>
+        <div class="myapp-stat"><span class="myapp-stat-num" style="color:#5D9B6A">1</span><span class="myapp-stat-lbl">Approved</span></div>
+        <div class="myapp-stat-div"></div>
+        <div class="myapp-stat"><span class="myapp-stat-num" style="color:#E65100">2</span><span class="myapp-stat-lbl">In Progress</span></div>
+      </div>
+    </div>
+
+    <style>
+      .myapp-top-bar {
+        display: flex; align-items: flex-start; justify-content: space-between;
+        margin-bottom: 28px; gap: 20px; flex-wrap: wrap;
+      }
+      .myapp-top-bar h1 { margin-bottom: 6px; }
+      .myapp-subtitle { font-size: 14px; color: var(--color-text-muted); margin-bottom: 0; }
+      .myapp-stats-strip {
+        display: flex; align-items: center; gap: 0;
+        background: #fff; border: 1px solid #EDD9C8;
+        border-radius: 12px; padding: 14px 22px;
+        box-shadow: 0 2px 8px rgba(0,0,0,.04);
+        flex-shrink: 0;
+      }
+      .myapp-stat { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 0 18px; }
+      .myapp-stat-num { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--color-text); }
+      .myapp-stat-lbl { font-size: 11px; font-weight: 600; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+      .myapp-stat-div { width: 1px; height: 34px; background: #EDD9C8; flex-shrink: 0; }
+    </style>
+
+    <div class="app-cards">
+
+      <!-- ── Card 1: Luna — Shortlisted (step 1) ── -->
+      <div class="app-card">
+        <div class="app-card-top">
+          <div class="app-card-pet">
+            <img class="app-card-img"
+              src="https://images.unsplash.com/photo-1633722715463-d30f4f325e24?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"
+              alt="Luna the Golden Retriever"/>
+            <div>
+              <div class="app-card-name">Luna</div>
+              <div class="app-card-breed">Golden Retriever</div>
+            </div>
+          </div>
+          <span class="app-card-status" style="background:#F4C542">Shortlisted</span>
+        </div>
+
+        <p class="app-card-date">Submitted: March 12, 2026</p>
+
+        <!-- Progress tracker — currentStep 1 (Shortlisted is current) -->
+        <div class="progress-tracker" id="tracker1">
+          <!-- Step 0: Pending (completed) -->
+          <div class="progress-step">
+            <div class="step-circle completed">
+              <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span class="step-label">Pending</span>
+          </div>
+          <div class="step-line done"></div>
+
+          <!-- Step 1: Shortlisted (current) -->
+          <div class="progress-step">
+            <div class="step-circle current">
+              <div class="step-pulse"></div>
+              <div class="step-dot"></div>
+            </div>
+            <span class="step-label">Shortlisted</span>
+          </div>
+          <div class="step-line pending"></div>
+
+          <!-- Step 2: Visit Scheduled (future) -->
+          <div class="progress-step">
+            <div class="step-circle future"></div>
+            <span class="step-label">Visit Scheduled</span>
+          </div>
+          <div class="step-line pending"></div>
+
+          <!-- Step 3: Approved (future) -->
+          <div class="progress-step">
+            <div class="step-circle future"></div>
+            <span class="step-label">Approved</span>
+          </div>
+          <div class="step-line pending"></div>
+
+          <!-- Step 4: Adopted (future) -->
+          <div class="progress-step">
+            <div class="step-circle future"></div>
+            <span class="step-label">Adopted</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Card 2: Max — Visit Scheduled (step 2) ── -->
+      <div class="app-card">
+        <div class="app-card-top">
+          <div class="app-card-pet">
+            <img class="app-card-img"
+              src="https://images.unsplash.com/photo-1698170928357-a4671f4ef461?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400"
+              alt="Max the Tabby Cat"/>
+            <div>
+              <div class="app-card-name">Max</div>
+              <div class="app-card-breed">Tabby Cat</div>
+            </div>
+          </div>
+          <span class="app-card-status" style="background:#9DAF94">Visit Scheduled</span>
+        </div>
+
+        <p class="app-card-date">Submitted: February 28, 2026</p>
+
+        <!-- Progress tracker — currentStep 2 (Visit Scheduled is current) -->
+        <div class="progress-tracker">
+          <!-- Step 0: Pending (completed) -->
+          <div class="progress-step">
+            <div class="step-circle completed">
+              <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span class="step-label">Pending</span>
+          </div>
+          <div class="step-line done"></div>
+
+          <!-- Step 1: Shortlisted (completed) -->
+          <div class="progress-step">
+            <div class="step-circle completed">
+              <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span class="step-label">Shortlisted</span>
+          </div>
+          <div class="step-line done"></div>
+
+          <!-- Step 2: Visit Scheduled (current) -->
+          <div class="progress-step">
+            <div class="step-circle current">
+              <div class="step-pulse"></div>
+              <div class="step-dot"></div>
+            </div>
+            <span class="step-label">Visit Scheduled</span>
+          </div>
+          <div class="step-line pending"></div>
+
+          <!-- Step 3: Approved (future) -->
+          <div class="progress-step">
+            <div class="step-circle future"></div>
+            <span class="step-label">Approved</span>
+          </div>
+          <div class="step-line pending"></div>
+
+          <!-- Step 4: Adopted (future) -->
+          <div class="progress-step">
+            <div class="step-circle future"></div>
+            <span class="step-label">Adopted</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+</div>
+
+<!-- ======= FOOTER ======= -->
+<footer class="pawpal-footer">
+  <div class="pawpal-footer-inner">
+    <div class="pawpal-footer-top">
+      <div>
+        <div class="pawpal-footer-logo">
+          <img src="images/logo.png" alt="PawPal Logo"/>
+          <span class="pawpal-footer-logo-text">PawPal</span>
+        </div>
+        <p class="pawpal-footer-tagline">Connecting hearts, one paw at a time.</p>
+        <p class="pawpal-footer-motto">Because Every Paw Matters</p>
+      </div>
+      <div class="pawpal-footer-links">
+        <a href="#">About PawPal</a>
+        <a href="#">Adoption Process</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+      <div class="pawpal-footer-social">
+        <a href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      </div>
+    </div>
+    <div class="pawpal-footer-bottom">&copy; 2026 PawPal AI. All rights reserved. &nbsp;&middot;&nbsp; <em>Because Every Paw Matters</em></div>
+  </div>
+</footer>
+
+</body>
+</html>

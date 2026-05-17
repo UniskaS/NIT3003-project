@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PawPal — Add New Pet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&family=DM+Mono&display=swap" rel="stylesheet"/>
+
+  <!-- ✅ SHARED CSS (same on every page — do not duplicate) -->
+  <link rel="stylesheet" href="css/global.css"/>
+  <link rel="stylesheet" href="css/shared-nav.css"/>
+  <link rel="stylesheet" href="css/shared-footer.css"/>
+  <link rel="stylesheet" href="css/nav.css"/>
+  <link rel="stylesheet" href="css/sidebar.css"/>
+  <link rel="stylesheet" href="css/footer.css"/>
+
+  <!-- ✅ PAGE-SPECIFIC CSS (only for this page) -->
+  <link rel="stylesheet" href="css/add-pet.css"/>
+</head>
+<body>
+
+<!-- ======= NAV ======= -->
+<nav class="pawpal-nav">
+  <a class="pawpal-nav-logo" href="index.html">
+    <img src="images/logo.png" alt="PawPal Logo"/>
+    <span class="pawpal-nav-logo-text">PawPal</span>
+    <span class="pawpal-badge-admin">Admin Panel</span>
+  </a>
+  <div class="pawpal-nav-right">
+    <a href="home.html">Home</a>
+    <a href="pet-profile.html">Pets</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
+<!-- ======= LAYOUT ======= -->
+<div class="layout">
+
+  <!-- ======= SIDEBAR (shared — edit css/sidebar.css) ======= -->
+  <aside>
+    <a class="sidebar-item" data-page="dashboard" href="index.html">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      Dashboard
+    </a>
+    <a class="sidebar-item" data-page="pets" href="pets.html">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/><path d="M8 9a1 1 0 1 0 2 0A1 1 0 0 0 8 9zm6 0a1 1 0 1 0 2 0A1 1 0 0 0 14 9zm-7 6s1.5 2 5 2 5-2 5-2"/></svg>
+      Manage Pets
+    </a>
+    <a class="sidebar-item" data-page="applications" href="applications.html">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      Applications
+    </a>
+    <a class="sidebar-item" data-page="analytics" href="analytics.html">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      Analytics
+    </a>
+    <a class="sidebar-item" data-page="settings" href="settings.html">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      Settings
+    </a>
+  </aside>
+
+  <!-- ======= MAIN CONTENT ======= -->
+  <main>
+    <div class="main-inner">
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        <a href="index.html">Admin</a>
+        <span class="sep">›</span>
+        <a href="pets.html">Manage Pets</a>
+        <span class="sep">›</span>
+        <span class="current">Add New Pet</span>
+      </div>
+
+      <div class="top-bar">
+        <h1>Add New Pet</h1>
+      </div>
+
+      <!-- ── SECTION 1: Basic Information ── -->
+      <div class="form-section">
+        <h2>Basic Information</h2>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="petName">Pet Name</label>
+            <input class="form-input" id="petName" type="text" placeholder="e.g., Bella"/>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="type">Type</label>
+            <div class="select-wrapper">
+              <select class="form-select" id="type">
+                <option value="" disabled selected>Select type</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="breed">Breed</label>
+            <input class="form-input" id="breed" type="text" placeholder="e.g., Golden Retriever"/>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="age">Age</label>
+            <input class="form-input" id="age" type="text" placeholder="e.g., 2 years"/>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="gender">Gender</label>
+            <div class="select-wrapper">
+              <select class="form-select" id="gender">
+                <option value="" disabled selected>Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="size">Size</label>
+            <div class="select-wrapper">
+              <select class="form-select" id="size">
+                <option value="" disabled selected>Select size</option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="keywords">Behaviour Keywords</label>
+          <input class="form-input" id="keywords" type="text" placeholder="e.g., friendly, energetic, good with kids"/>
+          <p class="form-hint">Separate keywords with commas. These help match pets with suitable adopters.</p>
+        </div>
+      </div>
+
+      <!-- ── SECTION 2: AI Generated Description ── -->
+      <div class="form-section ai-section">
+        <div class="ai-header">
+          <div class="ai-title">
+            <!-- Sparkles icon -->
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:20px;height:20px;color:#E5B85F"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/><path d="M5 18l.75 2.25L8 21l-2.25.75L5 24l-.75-2.25L2 21l2.25-.75L5 18z"/><path d="M19 3l.5 1.5L21 5l-1.5.5L19 7l-.5-1.5L17 5l1.5-.5L19 3z"/></svg>
+            <h2>AI Generated Description</h2>
+          </div>
+          <button class="btn btn-primary" onclick="generateDescription()">Generate Description</button>
+        </div>
+        <textarea class="form-textarea" id="aiDescription" placeholder="Click 'Generate Description' to create an engaging adoption profile based on the pet's information..."></textarea>
+      </div>
+
+      <!-- ── SECTION 3: Photos ── -->
+      <div class="form-section">
+        <h2>Photos</h2>
+
+        <div class="upload-area" onclick="document.getElementById('photoInput').click()">
+          <!-- Upload icon -->
+          <svg class="upload-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+          <p class="upload-title">Drag photos here or Choose Files</p>
+          <p class="upload-hint">Upload up to 8 photos (JPG, PNG, max 5MB each)</p>
+          <input type="file" id="photoInput" accept="image/*" multiple style="display:none" onchange="handlePhotos(event)"/>
+        </div>
+
+        <div class="photo-grid" id="photoGrid">
+          <!-- Sample preview photos -->
+          <div class="photo-item">
+            <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=150&h=150&fit=crop" alt="Pet photo 1"/>
+            <button class="photo-remove" onclick="this.parentElement.remove()">✕</button>
+          </div>
+          <div class="photo-item">
+            <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=150&h=150&fit=crop" alt="Pet photo 2"/>
+            <button class="photo-remove" onclick="this.parentElement.remove()">✕</button>
+          </div>
+          <div class="photo-item">
+            <img src="https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?w=150&h=150&fit=crop" alt="Pet photo 3"/>
+            <button class="photo-remove" onclick="this.parentElement.remove()">✕</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SECTION 4: Staff Only ── -->
+      <div class="form-section staff-section">
+        <div class="staff-header">
+          <!-- Lock icon -->
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:20px;height:20px"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <h2>Staff Only Information</h2>
+        </div>
+
+        <div class="staff-fields">
+          <div class="form-group">
+            <label class="form-label" for="medical">Medical History</label>
+            <textarea class="form-textarea" id="medical" placeholder="Enter any medical conditions, treatments, or health notes..."></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="rescue">Rescue Background</label>
+            <textarea class="form-textarea" id="rescue" placeholder="Enter rescue story, previous home information, or behavioural notes..."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── ACTION BUTTONS ── -->
+      <div class="form-actions">
+        <button class="btn btn-outline">Save as Draft</button>
+        <button class="btn btn-primary">Publish Pet Profile</button>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- ======= FOOTER ======= -->
+<footer class="pawpal-footer">
+  <div class="pawpal-footer-inner">
+    <div class="pawpal-footer-top">
+      <div>
+        <div class="pawpal-footer-logo">
+          <img src="images/logo.png" alt="PawPal Logo"/>
+          <span class="pawpal-footer-logo-text">PawPal</span>
+        </div>
+        <p class="pawpal-footer-tagline">Connecting hearts, one paw at a time.</p>
+        <p class="pawpal-footer-motto">Because Every Paw Matters</p>
+      </div>
+      <div class="pawpal-footer-links">
+        <a href="#">About PawPal</a>
+        <a href="#">Adoption Process</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+      <div class="pawpal-footer-social">
+        <a href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      </div>
+    </div>
+    <div class="pawpal-footer-bottom">&copy; 2026 PawPal AI. All rights reserved. &nbsp;&middot;&nbsp; <em>Because Every Paw Matters</em></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Generate AI description (placeholder)
+  function generateDescription() {
+    const name  = document.getElementById('petName').value  || 'this pet';
+    const breed = document.getElementById('breed').value    || 'mixed breed';
+    const age   = document.getElementById('age').value      || 'unknown age';
+    const keys  = document.getElementById('keywords').value || 'friendly and loving';
+    document.getElementById('aiDescription').value =
+      `Meet ${name}, a wonderful ${breed} who is ${age} old! ${name} is ${keys}. ` +
+      `This adorable companion is looking for a forever home where they can bring joy and love every single day. ` +
+      `Could you be the perfect match? 🐾`;
+  }
+
+  // Handle photo uploads
+  function handlePhotos(event) {
+    const grid  = document.getElementById('photoGrid');
+    const files = Array.from(event.target.files).slice(0, 8);
+    files.forEach(file => {
+      const reader = new FileReader();
+      reader.onload = e => {
+        const item = document.createElement('div');
+        item.className = 'photo-item';
+        item.innerHTML = `<img src="${e.target.result}" alt="Uploaded photo"/>
+          <button class="photo-remove" onclick="this.parentElement.remove()">✕</button>`;
+        grid.appendChild(item);
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+</script>
+</body>
+</html>

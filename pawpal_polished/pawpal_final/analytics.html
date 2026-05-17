@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PawPal — Analytics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&family=DM+Mono&display=swap" rel="stylesheet"/>
+  <!-- ✅ SHARED CSS -->
+  <link rel="stylesheet" href="css/global.css"/>
+  <link rel="stylesheet" href="css/shared-nav.css"/>
+  <link rel="stylesheet" href="css/shared-footer.css"/>
+  <link rel="stylesheet" href="css/nav.css"/>
+  <link rel="stylesheet" href="css/sidebar.css"/>
+  <link rel="stylesheet" href="css/footer.css"/>
+  <!-- ✅ PAGE-SPECIFIC CSS -->
+  <link rel="stylesheet" href="css/analytics.css"/>
+</head>
+<body>
+
+<!-- ======= NAV ======= -->
+<nav class="pawpal-nav">
+  <a class="pawpal-nav-logo" href="index.html">
+    <img src="images/logo.png" alt="PawPal Logo"/>
+    <span class="pawpal-nav-logo-text">PawPal</span>
+    <span class="pawpal-badge-admin">Admin Panel</span>
+  </a>
+  <div class="pawpal-nav-right">
+    <a href="home.html">Home</a>
+    <a href="pet-profile.html">Pets</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside>
+    <a class="sidebar-item" data-page="dashboard" href="index.html">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      Dashboard
+    </a>
+    <a class="sidebar-item" data-page="pets" href="pets.html">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/><path d="M8 9a1 1 0 1 0 2 0A1 1 0 0 0 8 9zm6 0a1 1 0 1 0 2 0A1 1 0 0 0 14 9zm-7 6s1.5 2 5 2 5-2 5-2"/></svg>
+      Manage Pets
+    </a>
+    <a class="sidebar-item" data-page="applications" href="applications.html">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      Applications
+    </a>
+    <a class="sidebar-item" data-page="analytics" href="analytics.html">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      Analytics
+    </a>
+    <a class="sidebar-item" data-page="settings" href="settings.html">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      Settings
+    </a>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+    <div class="main-inner">
+
+      <div class="top-bar">
+        <h1>Analytics</h1>
+      </div>
+
+      <!-- FILTER BAR -->
+      <div class="analytics-insight-pill">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:16px;height:16px;color:var(--color-primary)"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/></svg>
+        <span>🐾 Adoptions are up <strong>+23%</strong> this month — your shelter is thriving!</span>
+      </div>
+      <style>
+        .analytics-insight-pill {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          background: linear-gradient(90deg, var(--color-primary-pale) 0%, #fff 100%);
+          border: 1px solid var(--color-border);
+          border-radius: 999px;
+          padding: 10px 20px;
+          font-size: 13.5px;
+          color: var(--color-text);
+          margin-bottom: 20px;
+          box-shadow: var(--shadow-sm);
+        }
+        .analytics-insight-pill strong { color: var(--color-primary); }
+      </style>
+
+      <div class="filter-bar">
+        <div class="filter-group">
+          <label>From:</label>
+          <input class="filter-input" type="date" value="2026-04-01"/>
+        </div>
+        <div class="filter-group">
+          <label>To:</label>
+          <input class="filter-input" type="date" value="2026-05-15"/>
+        </div>
+        <button class="filter-btn filter-btn-primary">Apply</button>
+        <button class="filter-btn filter-btn-outline">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Export CSV
+        </button>
+      </div>
+
+      <!-- STAT CARDS -->
+      <div class="analytics-stat-grid">
+        <div class="analytics-stat-card">
+          <div class="analytics-stat-top">
+            <div class="analytics-stat-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <span class="analytics-stat-change positive">+12.5%</span>
+          </div>
+          <div class="analytics-stat-label">Total Visitors</div>
+          <div class="analytics-stat-value">12,847</div>
+        </div>
+        <div class="analytics-stat-card">
+          <div class="analytics-stat-top">
+            <div class="analytics-stat-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <span class="analytics-stat-change positive">+8.2%</span>
+          </div>
+          <div class="analytics-stat-label">Active Users</div>
+          <div class="analytics-stat-value">3,264</div>
+        </div>
+        <div class="analytics-stat-card">
+          <div class="analytics-stat-top">
+            <div class="analytics-stat-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <span class="analytics-stat-change positive">+15.3%</span>
+          </div>
+          <div class="analytics-stat-label">Successful Matches</div>
+          <div class="analytics-stat-value">1,523</div>
+        </div>
+        <div class="analytics-stat-card">
+          <div class="analytics-stat-top">
+            <div class="analytics-stat-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5"/></svg>
+            </div>
+            <span class="analytics-stat-change negative">-2.1%</span>
+          </div>
+          <div class="analytics-stat-label">Avg. Click Rate</div>
+          <div class="analytics-stat-value">68.4%</div>
+        </div>
+      </div>
+
+      <!-- 2-COL CHARTS -->
+      <div class="charts-grid-2">
+        <div class="chart-card">
+          <h3>Top Search Keywords</h3>
+          <div class="chart-canvas-wrap">
+            <canvas id="keywordsChart"></canvas>
+          </div>
+        </div>
+        <div class="chart-card">
+          <h3>Weekly Inquiries</h3>
+          <div class="chart-canvas-wrap">
+            <canvas id="weeklyChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- FULL-WIDTH LINE CHART -->
+      <div class="chart-card full-width">
+        <h3>AI Suggestions vs Adoptions</h3>
+        <div class="chart-canvas-wrap">
+          <canvas id="trendsChart"></canvas>
+        </div>
+        <div class="chart-legend">
+          <div class="legend-item">
+            <div class="legend-dot" style="background:#C17B5C"></div>
+            AI Suggested
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background:#7B9B7E"></div>
+            Adopted
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- FOOTER -->
+<!-- ======= FOOTER ======= -->
+<footer class="pawpal-footer">
+  <div class="pawpal-footer-inner">
+    <div class="pawpal-footer-top">
+      <div>
+        <div class="pawpal-footer-logo">
+          <img src="images/logo.png" alt="PawPal Logo"/>
+          <span class="pawpal-footer-logo-text">PawPal</span>
+        </div>
+        <p class="pawpal-footer-tagline">Connecting hearts, one paw at a time.</p>
+        <p class="pawpal-footer-motto">Because Every Paw Matters</p>
+      </div>
+      <div class="pawpal-footer-links">
+        <a href="#">About PawPal</a>
+        <a href="#">Adoption Process</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+      <div class="pawpal-footer-social">
+        <a href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      </div>
+    </div>
+    <div class="pawpal-footer-bottom">&copy; 2026 PawPal AI. All rights reserved. &nbsp;&middot;&nbsp; <em>Because Every Paw Matters</em></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+  Chart.defaults.font.family = "'DM Sans', sans-serif";
+  Chart.defaults.color = '#6B5B4E';
+  const grid = '#EDD9C8';
+
+  // Top Search Keywords — horizontal bar
+  new Chart(document.getElementById('keywordsChart'), {
+    type: 'bar',
+    data: {
+      labels: ['Golden Retriever','Small Dogs','Hypoallergenic','Rescue Cats','Puppies Near Me'],
+      datasets: [{
+        data: [1247, 982, 856, 743, 621],
+        backgroundColor: ['rgba(193,123,92,1)','rgba(193,123,92,.85)','rgba(193,123,92,.70)','rgba(193,123,92,.55)','rgba(193,123,92,.40)'],
+        borderRadius: 6,
+        borderSkipped: false,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { color: grid }, border: { display: false } },
+        y: { grid: { display: false }, border: { display: false }, ticks: { color: '#3D2E26' } }
+      }
+    }
+  });
+
+  // Weekly Inquiries — vertical bar
+  new Chart(document.getElementById('weeklyChart'), {
+    type: 'bar',
+    data: {
+      labels: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+      datasets: [{
+        data: [45, 62, 58, 71, 68, 89, 76],
+        backgroundColor: '#7B9B7E',
+        borderRadius: { topLeft: 6, topRight: 6 },
+        borderSkipped: false,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { display: false }, border: { display: false } },
+        y: { grid: { color: grid }, border: { display: false } }
+      }
+    }
+  });
+
+  // AI Suggestions vs Adoptions — line chart
+  new Chart(document.getElementById('trendsChart'), {
+    type: 'line',
+    data: {
+      labels: ['Jan','Feb','Mar','Apr','May','Jun'],
+      datasets: [
+        {
+          label: 'AI Suggested',
+          data: [145, 168, 187, 203, 221, 245],
+          borderColor: '#C17B5C',
+          backgroundColor: 'rgba(193,123,92,.08)',
+          borderWidth: 3,
+          pointBackgroundColor: '#C17B5C',
+          pointRadius: 5,
+          tension: 0.4,
+          fill: true,
+        },
+        {
+          label: 'Adopted',
+          data: [98, 112, 134, 156, 178, 201],
+          borderColor: '#7B9B7E',
+          backgroundColor: 'rgba(123,155,126,.08)',
+          borderWidth: 3,
+          pointBackgroundColor: '#7B9B7E',
+          pointRadius: 5,
+          tension: 0.4,
+          fill: true,
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { display: false }, border: { display: false } },
+        y: { grid: { color: grid }, border: { display: false } }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
